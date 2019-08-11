@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+
+    <div class="container">
+        <form action="/heroes" method="POST">
+            <div class="form-group">
+                <label for="name">Code Name</label>
+                <input name="hero[name]" type="input" class="form-control" id="name" placeholder="Code Name" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image Link</label>
+                <input name="hero[image]" type="input" class="form-control" id="image" placeholder="Image URL" required>
+            </div>
+            <div class="form-group">
+                <label for="quirk">Super Power</label>
+                <input name="hero[quirk]" type="input" class="form-control" id="quirk" placeholder="Super Power" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="hero[description]" class="form-control" id="description" placeholder="Description" rows="4" cols="50" maxlength="200" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+<% include ./partials/footer %>

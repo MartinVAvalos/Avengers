@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+    <div class="container">
+        <header class="jumbotron pb-6">
+            <div class="container">
+                <h1 class="navbar-brand">Avengers</h1>
+                <p>Earth's Mightiest Heroes</p>
+                <a href="/heroes/new" class="btn btn-light mt-3">A New Hero?</a>
+            </div>
+        </header>
+
+        <div class="row" style="display:flex; flex-wrap: wrap;">
+            <% heroes.forEach((hero) => { %>
+                <div class="col-md-3 col-sm-6 mb-2">
+                <a href="/heroes/<%= hero._id %>">
+                    <div class="card card-blur jump card-block p-2">
+                    <img src="<%= hero.image %>" alt="Hero">
+                        <h4 class="pt-2"><%= hero.name %></h4>
+                    </div>
+                </a>
+                </div>
+            <% }); %>
+        </div>
+
+    </div>
+
+<% include ./partials/footer %>

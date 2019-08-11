@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+
+    <div class="container">
+        <a class="btn backButtonStyling" href="/heroes/<%= hero.id %>" ><i class="far fa-arrow-alt-circle-left"></i></a>
+        <div class="container col-10">
+            <form action="/heroes/<%= hero._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <label for="name">Code Name</label>
+                    <input name="hero[name]" value="<%= hero.name %>" type="input" class="form-control" id="name" placeholder="Code Name" maxlength="20" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Link</label>
+                    <input name="hero[image]" value="<%= hero.image %>" type="input" class="form-control" id="image" placeholder="Image URL" required>
+                </div>
+                <div class="form-group">
+                    <label for="quirk">Super Power</label>
+                    <input name="hero[quirk]" value="<%= hero.quirk %>" type="input" class="form-control" id="quirk" placeholder="Super Power" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="hero[description]" class="form-control" id="description" placeholder="Description" rows="4" cols="50" maxlength="200" required><%= hero.description %></textarea>
+                </div>
+                <button type="submit" class="btn submitStyling">Submit</button>
+            </form>
+        </div>
+    </div>
+
+<% include ./partials/footer %>

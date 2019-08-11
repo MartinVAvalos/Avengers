@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<a class="btn backButtonStyling ml-5" href="/heroes/" ><i class="far fa-arrow-alt-circle-left"></i></a>
+<div class="container mx-auto mt-2">
+        <div class="show-card card border-primary mb-3">
+                <div class="show-card card-header"><h1><%= hero.name %></h1></div>
+                <div class="row py-3">
+                    <img class="card-img col-md-6 pl-5" src="<%= hero.image %>" alt="hero">
+                    <div class="card-body col-md-6">
+                        <h5 class="show-card card-title"><strong>Super Power:</strong> <%= hero.quirk %></h5>
+                        <p class="show-card card-text"><%- hero.description %></p>
+                        <div class="btngroup bottomRight">
+                            <a href="/heroes/<%= hero.id %>/edit" class="display-4 btn btn-info mybutton">Edit this Hero?</a>
+                    
+                            <form action="/heroes/<%= hero.id %>?_method=DELETE" method="POST" class="mysize">
+                                <button class="btn btn-danger mybutton">DELETE
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+</div>
+
+<% include partials/footer %>
